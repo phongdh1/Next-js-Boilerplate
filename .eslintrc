@@ -21,11 +21,11 @@
       "plugins": [
         "@typescript-eslint",
         "unused-imports",
-        "tailwindcss",
+        // "tailwindcss",
         "simple-import-sort"
       ],
       "extends": [
-        "plugin:tailwindcss/recommended",
+        // "plugin:tailwindcss/recommended",
         "airbnb-typescript",
         "next/core-web-vitals",
         "plugin:prettier/recommended"
