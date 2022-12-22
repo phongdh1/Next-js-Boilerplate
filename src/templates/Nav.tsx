@@ -10,7 +10,7 @@ import Login from '@/components/login';
 import styles from './Nav.module.scss';
 
 const NavBar = () => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState<any | null>(null);
   // const router = useRouter();
   useEffect(() => {
     async function loadUserFromCookies() {

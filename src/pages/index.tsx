@@ -1,5 +1,3 @@
-import { useRouter } from 'next/router';
-
 import { FistSection, SecondSection } from '@/components/home-page';
 import { Meta } from '@/layouts/Meta';
 import { Main } from '@/templates/Main';
@@ -8,7 +6,7 @@ import { Main } from '@/templates/Main';
 
 const Index = () => {
   // eslint-disable-next-line unused-imports/no-unused-vars
-  const router = useRouter();
+  // const router = useRouter();
 
   return (
     <Main

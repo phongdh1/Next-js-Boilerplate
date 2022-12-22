@@ -23,13 +23,7 @@ type TObject = {
 
 function Login(props: any) {
   const { isShow, onCloseLogin } = props;
-  const {
-    register,
-    handleSubmit,
-    // reset,
-    // eslint-disable-next-line unused-imports/no-unused-vars
-    formState: { errors },
-  } = useForm<IFormInputs>();
+  const { register, handleSubmit } = useForm<IFormInputs>();
   const onSubmit = (data: IFormInputs) => {
     // eslint-disable-next-line @typescript-eslint/no-use-before-define
     login(data);
