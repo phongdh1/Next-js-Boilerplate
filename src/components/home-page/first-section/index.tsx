@@ -3,6 +3,19 @@ import React, { Fragment } from 'react';
 
 export default function FistSection() {
   const router = useRouter();
+  // const [show, setShow] = useState(false);
+
+  // const handleClose = (flag: boolean) => {
+  //   setShow(false);
+  //   debugger;
+  //   if (flag) {
+  //     router.reload(window.location.pathname);
+  //   }
+  // };
+  // function onHandleShow(): void {
+  //   return setShow(true);
+  // }
+
   return (
     <Fragment>
       {/* first section */}
@@ -36,6 +49,11 @@ export default function FistSection() {
               aperiam! Nulla. Architecto id mi autem nobis mi, eum ac
               repudiandae corrupti, platea quia! Odio atque.
             </span>
+            <div>
+              {/* Popup */}
+              {/* <Button variant="primary">Đăng Ký</Button> */}
+              {/* <Login isShow={show} onCloseLogin={handleClose}></Login> */}
+            </div>
             <img
               src={`${router.basePath}/assets/images/pooki.svg`} // Route of the image file
               alt="Your Name"
@@ -45,6 +63,7 @@ export default function FistSection() {
               }}
             />
           </div>
+
           <div
             className="basis-1/2"
             style={{
@@ -53,7 +72,15 @@ export default function FistSection() {
               backgroundColor: '#ffcb1f',
               borderRadius: '2rem',
             }}
-          ></div>
+          >
+            <video style={{ borderRadius: '2rem' }} controls>
+              <source
+                src="https://player.vimeo.com/progressive_redirect/playback/780275829/rendition/1080p/file.mp4?loc=external&amp;signature=306b69c4399118d037f338b4eef8f6c20206e79851f25d75e6fd8063cae12c1d"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+
           <div className="basis-1/4"></div>
         </div>
       </div>
@@ -71,6 +98,7 @@ export default function FistSection() {
           <div className="basis-1/4"></div>
           <div className="basis-1/2">
             <p className="text-center text-3xl text-amber-400">Meet Pooki</p>
+            <button type="button">Đăng Ký</button>
           </div>
           <div className="basis-1/4"></div>
         </div>

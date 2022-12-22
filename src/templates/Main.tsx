@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 import { AppConfig } from '@/utils/AppConfig';
 
-import Nav from './Nav';
+import NavBar from './Nav';
 
 type IMainProps = {
   meta: ReactNode;
@@ -14,7 +14,7 @@ const Main = (props: IMainProps) => (
     {props.meta}
 
     <div className="mx-auto">
-      <Nav></Nav>
+      <NavBar></NavBar>
       <div
         className="mx-auto flex flex-wrap items-center justify-between"
         style={{ backgroundColor: '#FAEDE5' }}
