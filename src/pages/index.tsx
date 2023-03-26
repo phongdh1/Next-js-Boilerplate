@@ -1,25 +1,24 @@
-import { FistSection, SecondSection } from '@/components/home-page';
-import { Meta } from '@/layouts/Meta';
-import { Main } from '@/templates/Main';
-// eslint-disable-next-line import/extensions
-// import styles from '../styles/global.css';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 const Index = () => {
-  // eslint-disable-next-line unused-imports/no-unused-vars
-  // const router = useRouter();
-
+  const router = useRouter();
+  useEffect(() => {
+    router.push('/dashboard');
+  });
   return (
-    <Main
-      meta={
-        <Meta
-          title="Next.js Boilerplate Presentation"
-          description="Next js Boilerplate is the perfect starter code for your project. Build your React application with the Next.js framework."
-        />
-      }
-    >
-      <FistSection></FistSection>
-      <SecondSection></SecondSection>
-    </Main>
+    <div></div>
+    // <Main
+    //   meta={
+    //     <Meta
+    //       title="Next.js Boilerplate Presentation"
+    //       description="Next js Boilerplate is the perfect starter code for your project. Build your React application with the Next.js framework."
+    //     />
+    //   }
+    // >
+    // <FistSection></FistSection>
+    //  <SecondSection></SecondSection>
+    // </Main>
   );
 };
 

@@ -1,0 +1,14 @@
+
+.side-menu-info-container {
+  font-size: 22px;
+  padding: 1rem;
+}
+.infor-item {
+  border-radius: 50px;
+  &:hover {
+    background: #afd5ff6e;
+  }
+
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}

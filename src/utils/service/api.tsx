@@ -30,6 +30,9 @@ api.interceptors.response.use(
   },
   (error) => {
     console.log(error.message);
+    if (error.code === 401) {
+      window.location.href = '/login';
+    }
     return Promise.reject(error);
   }
 );

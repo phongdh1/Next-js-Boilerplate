@@ -1,0 +1,124 @@
+.login_main {
+  .header_gradient_shadow {
+    background: -webkit-linear-gradient(#FFFFFF, #D6F1FF);
+    filter: drop-shadow(0 7px #244C77);
+    font-size: 100px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  @keyframes loginShowUp {
+    0% {
+      transform: translateY(-50vh);
+      opacity: 0;
+    }
+
+    50% {
+      transform: translateY(3rem);
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes bounceUp {
+    from {
+      transform: translateY(3rem);
+    }
+
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  .login_container {
+    position: relative;
+    width: 764.76px;
+    height: 628.03px;
+    animation: loginShowUp 0.5s, 0.05s;
+    animation-timing-function: ease-out;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url(../../../public/assets/images/khung.png);
+      filter: brightness(2) saturate(0.5) contrast(2.5) opacity(0.3);
+    }
+
+    >div {
+      position: relative;
+    }
+
+    form {
+      width: 100%;
+    }
+
+    input {
+      background-image: url(../../../public/assets/images/text-box-login.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-color: transparent;
+      width: 500px;
+      height: 90px;
+      margin-bottom: 2rem;
+      color: #ffffff9e;
+      font-size: 40px;
+      padding: 0 1rem 0 1rem;
+      border: none;
+
+
+
+      &::placeholder {
+        color: #ffffff9e;
+      }
+
+      &:focus {
+        border-radius: 50px;
+        box-shadow: 0px 0px 10px 3px #ffc593;
+      }
+    }
+
+    @-webkit-keyframes aniautofill {
+      to {
+        background-image: url(../../../public/assets/images/text-box-login.png);
+      }
+    }
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+      border-radius: 50px;
+      -webkit-animation-name: aniautofill;
+      -webkit-animation-fill-mode: both;
+    }
+
+
+
+
+
+    .login_btn {
+      width: 250px !important;
+      height: 120px !important;
+      cursor: pointer;
+      min-width: unset !important;
+      min-height: unset !important;
+
+      &:hover {
+        filter: brightness(1.2);
+      }
+
+      &:active {
+        filter: brightness(0.9);
+      }
+    }
+  }
+
+}

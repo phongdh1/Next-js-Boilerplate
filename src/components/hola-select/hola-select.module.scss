@@ -1,0 +1,35 @@
+.hola-select-wrapper {
+  position: relative;
+  width: fit-content;
+  cursor: pointer;
+  &::before {
+    content: '';
+    position: absolute;
+    background: url(../../../public/assets/images/muiten.png);
+    background-size: contain;
+    right: 26px;
+    top: 29px;
+    width: 25px;
+    height: 25px;
+    background-repeat: no-repeat;
+  }
+
+  select {
+    background: url(../../../public/assets/images/hola-select.png) !important;
+    border-radius: 50px;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    width: 250px;
+    height: 78px;
+    padding-left: 2rem;
+    color: white;
+    border: none;
+    font-size: 22px;
+    background-size: contain !important;
+   
+    option {
+      color: black !important;
+      padding: 0.3rem 0.3rem 0.3rem 0.3rem !important;
+    }
+  }
+}

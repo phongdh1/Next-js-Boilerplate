@@ -3,6 +3,10 @@
 @tailwind utilities;
 @import "~bootstrap/scss/bootstrap";
 
+@font-face {
+  font-family: 'iciel-cadena';
+  src: url(../../public/assets/fonts/iCielCadena.otf);
+}
 a {
   @apply text-blue-700;
 }
@@ -35,4 +39,25 @@ a:hover {
 }
 .max-w14{
   max-width: 14rem;
+}
+
+body {
+  font-family: 'iciel-cadena';
+  background-position: center;
+  background-image: url(../../public/assets/images/BG.png);
+  background-size: cover;
+  font-size: 22px;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'iciel-cadena';
+  color: white;
+}
+
+h1 {
+  font-size: 80px;
+}
+
+h2 {
+  
 }
