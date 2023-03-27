@@ -5,7 +5,7 @@ import Cookies from 'js-cookie';
 const urls = {
   test: `http://localhost:3000`,
   development: 'https://api-prod.hello-ielts.com/',
-  production: 'https://your-production-url.com/',
+  production: 'https://api-prod.hello-ielts.com/',
 };
 const bearToken = Cookies.get('token');
 const config = () => {
