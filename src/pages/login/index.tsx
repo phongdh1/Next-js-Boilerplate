@@ -48,7 +48,7 @@ const Login = () => {
   return (
     <div className={styles.login_main}>
       <div className="container-fluid d-flex justify-content-center align-items-center min-vh-100 ">
-        <div className={styles.login_container}>
+        <div className={`${styles.login_container} show-down-anima`}>
           <div className="d-flex w-100 h-100 align-items-center flex-column pt-5">
             <h1 className={styles.header_gradient_shadow}> ĐĂNG NHẬP </h1>
             <form

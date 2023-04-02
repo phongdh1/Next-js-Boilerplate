@@ -7,38 +7,10 @@
     -webkit-text-fill-color: transparent;
   }
 
-  @keyframes loginShowUp {
-    0% {
-      transform: translateY(-50vh);
-      opacity: 0;
-    }
-
-    50% {
-      transform: translateY(3rem);
-      opacity: 1;
-    }
-
-    100% {
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes bounceUp {
-    from {
-      transform: translateY(3rem);
-    }
-
-    to {
-      transform: translateY(0);
-    }
-  }
-
   .login_container {
     position: relative;
     width: 764.76px;
     height: 628.03px;
-    animation: loginShowUp 0.5s, 0.05s;
-    animation-timing-function: ease-out;
 
     &::before {
       content: "";

@@ -1,0 +1,62 @@
+.nav-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  background-size: contain !important;
+  background-position: center;
+  background-repeat: no-repeat !important;
+  margin-right: 1rem;
+
+  &.back {
+    background: url(../../../../public/assets/images/back.png);
+    &.prev {
+      filter: hue-rotate(169deg);
+      display: inline-block;
+      transform: translateY(20px);
+      margin-left: 1rem;
+      margin-right: 0;
+    }
+    &.next {
+      margin-left: 1rem;
+      filter: hue-rotate(169deg);
+      display: inline-block;
+      rotate: 180deg;
+      transform: translateY(-8px);
+      margin-right: 0;
+    }
+  }
+
+  &.home {
+    background: url(../../../../public/assets/images/home.png);
+  }
+}
+
+.excercise-container {
+  $cardWidth: 100%; 
+  $cardHeight: calc(100vh - 160px);
+  width: $cardWidth;
+  height: $cardHeight;
+  overflow: auto;
+  position: relative;
+  >div {
+    height: calc($cardWidth - 4.5rem);
+    overflow: auto;
+  }
+  &::before {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $cardHeight;
+    background-size: $cardWidth $cardHeight !important;
+    background-position: center;
+    background-repeat: no-repeat !important;
+    background: url(../../../../public/assets/images/khung-lam-bai.png);
+
+    filter: brightness(2.3) saturate(0.3) contrast(1.5) opacity(0.3);
+  }
+}
