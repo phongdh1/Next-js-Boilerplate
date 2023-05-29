@@ -1,55 +1,57 @@
-import Cookies from 'js-cookie';
-import jwt_decode from 'jwt-decode';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 
-import dangKyPng from '../../../public/assets/images/dang-ky.png';
-import dangNhapPng from '../../../public/assets/images/dang-nhap.png';
-import api from '../../utils/service/api';
+import LoginModal from '@/components/modal/login';
+
+import loginPng from '../../../public/assets/images/v2/btn_login.png';
+import registerPng from '../../../public/assets/images/v2/btn_register.png';
 import styles from './login.module.scss';
 
-interface IFormInputs {
-  username: string;
-  password: String;
-}
-interface IToken {
-  user: TObject;
-  password: String;
-}
+// interface IFormInputs {
+//   username: string;
+//   password: String;
+// }
+// interface IToken {
+//   user: TObject;
+//   password: String;
+// }
 
-type TObject = {
-  username: string;
-};
+// type TObject = {
+//   username: string;
+// };
 
 const Login = () => {
-  const [error, setError] = useState('');
-  const [formValue, setFormValue] = useState({
-    username: '',
-    password: '',
-  });
-  const router = useRouter();
+  const [show, setShow] = useState(false);
+  // const [error, setError] = useState('');
+  // const [formValue, setFormValue] = useState({
+  //   username: '',
+  //   password: '',
+  // });
 
-  async function login(form: IFormInputs) {
-    try {
-      const { data: token } = await api.post('users/login', form);
-      if (token) {
-        Cookies.set('token', token.accessToken, { expires: 60 });
-        const deCodeToken = jwt_decode(token.accessToken) as IToken;
-        Cookies.set('username', deCodeToken.user.username, { expires: 60 });
-        router.push('/dashboard');
-        setError('');
-      }
-    } catch (e) {
-      setError('Đăng nhập không thành công');
-    }
-  }
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  // const router = useRouter();
+
+  // async function login(form: IFormInputs) {
+  //   try {
+  //     const { data: token } = await api.post('users/login', form);
+  //     if (token) {
+  //       Cookies.set('token', token.accessToken, { expires: 60 });
+  //       const deCodeToken = jwt_decode(token.accessToken) as IToken;
+  //       Cookies.set('username', deCodeToken.user.username, { expires: 60 });
+  //       router.push('/dashboard');
+  //       setError('');
+  //     }
+  //   } catch (e) {
+  //     setError('Đăng nhập không thành công');
+  //   }
+  // }
 
   return (
     <div className={styles.login_main}>
-      <div className="container-fluid d-flex justify-content-center align-items-center min-vh-100 ">
-        <div className={`${styles.login_container} show-down-anima`}>
-          <div className="d-flex w-100 h-100 align-items-center flex-column pt-5">
+      <div className="container-fluid d-flex justify-content-start align-items-end min-vh-100">
+        <div className="show-down-anima">
+          {/* <div className="d-flex w-100 h-100 align-items-center flex-column pt-5">
             <h1 className={styles.header_gradient_shadow}> ĐĂNG NHẬP </h1>
             <form
               className="d-flex flex-column align-items-center"
@@ -94,6 +96,31 @@ const Login = () => {
               </div>
               <h5 className="text-danger">{error}</h5>
             </form>
+          </div> */}
+          <div>
+            <button
+              type="button"
+              className="btn btn-link m-0 p-0"
+              data-toggle="modal"
+              data-target="#exampleModal"
+              onClick={handleShow}
+            >
+              <Image
+                itemType="button"
+                src={loginPng}
+                className={styles.login_btn}
+                alt="Đăng ký"
+              />
+            </button>
+            <button type="button" className="btn btn-link m-0 p-0">
+              <Image
+                itemType="button"
+                src={registerPng}
+                className={styles.login_btn}
+                alt="Đăng ký"
+              />
+            </button>
+            <LoginModal isShow={show} onCloseLogin={handleClose}></LoginModal>
           </div>
         </div>
       </div>

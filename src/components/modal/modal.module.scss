@@ -1,0 +1,25 @@
+.modal-common {
+    .custom-modal-header {
+        background-color: red !important;
+        background-image: url(../../../public/assets/images/v2/popup_login.png);
+    }
+    .custom-modal-content {
+        background-image: url(../../../public/assets/images/v2/popup_login.png);
+        background-size: cover;
+    }
+    .modal-content {
+        background-color: red !important;
+    }
+    .modal-body {
+        background-color: #f0f0f0;
+    }
+    .close {
+        color: red;
+    }
+}
+
+// .test{
+//     .modal-header{
+//         background-color: red !important;
+//     }
+// }

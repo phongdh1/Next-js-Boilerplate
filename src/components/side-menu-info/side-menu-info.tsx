@@ -24,9 +24,10 @@ export const SideMenuInfo = (props: { menuItems: SideMenuItem[] | null }) => {
       <div className="row align-items-center py-2">
         <div className="col-3 d-flex align-items-center justify-content-end">
           <Image
-            width="116px"
-            height="96px"
+            width={116}
+            height={96}
             src={'/assets/images/khung ava.png'}
+            alt="Description"
           ></Image>
         </div>
         <div className="col-9 d-flex  align-items-center text-white">
@@ -41,7 +42,12 @@ export const SideMenuInfo = (props: { menuItems: SideMenuItem[] | null }) => {
             className={`row align-items-center py-2 ${styles['infor-item']}`}
           >
             <div className="col-3 d-flex align-items-center justify-content-end">
-              <Image width="63px" height="52px" src={item.imageSrc}></Image>
+              <Image
+                width={63}
+                height={52}
+                src={item.imageSrc}
+                alt="Description"
+              ></Image>
             </div>
             <div className="col-9 d-flex  align-items-center text-white">
               {item.title}

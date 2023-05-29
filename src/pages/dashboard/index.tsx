@@ -50,9 +50,10 @@ const MainBoard = () => {
               <Link href={item.navigateTo}>
                 <div className="d-flex flex-column justify-content-center align-items-center">
                   <Image
-                    width="265px"
-                    height="265px"
+                    width={265}
+                    height={265}
                     src={item.imageSrc}
+                    alt="Description"
                   ></Image>
                   <span className="mt-2 text-white">{item.title}</span>
                 </div>

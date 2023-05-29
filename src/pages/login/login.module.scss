@@ -1,7 +1,9 @@
 .login_main {
+  background-image: url(../../../public/assets/images/v2/home.png);
+  background-size: cover;
   .header_gradient_shadow {
-    background: -webkit-linear-gradient(#FFFFFF, #D6F1FF);
-    filter: drop-shadow(0 7px #244C77);
+    background: -webkit-linear-gradient(#ffffff, #d6f1ff);
+    filter: drop-shadow(0 7px #244c77);
     font-size: 100px;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -23,7 +25,7 @@
       filter: brightness(2) saturate(0.5) contrast(2.5) opacity(0.3);
     }
 
-    >div {
+    > div {
       position: relative;
     }
 
@@ -44,8 +46,6 @@
       font-size: 40px;
       padding: 0 1rem 0 1rem;
       border: none;
-
-
 
       &::placeholder {
         color: #ffffff9e;
@@ -72,10 +72,6 @@
       -webkit-animation-fill-mode: both;
     }
 
-
-
-
-
     .login_btn {
       width: 250px !important;
       height: 120px !important;
@@ -92,5 +88,4 @@
       }
     }
   }
-
 }
