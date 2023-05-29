@@ -1,5 +1,6 @@
 import Cookies from 'js-cookie';
 import jwt_decode from 'jwt-decode';
+import { useRouter } from 'next/router';
 import React from 'react';
 import { Form } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
@@ -25,6 +26,7 @@ type TObject = {
 function LoginModal(props: any) {
   const { isShow, onCloseLogin } = props;
   const { register, handleSubmit } = useForm<IFormInputs>();
+  const router = useRouter();
   const onSubmit = (data: IFormInputs) => {
     // eslint-disable-next-line @typescript-eslint/no-use-before-define
     login(data);
@@ -44,6 +46,7 @@ function LoginModal(props: any) {
         const deCodeToken = jwt_decode(token.accessToken) as IToken;
         Cookies.set('username', deCodeToken.user.username, { expires: 60 });
         onCloseLogin(true);
+        router.push('/dashboard');
       }
     } catch (error) {
       throw error;
