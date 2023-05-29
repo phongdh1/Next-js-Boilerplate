@@ -54,7 +54,7 @@ function LoginModal(props: any) {
   }
 
   return (
-    <div className="test">
+    <div>
       {/* Popup */}
       <Modal
         show={isShow}
@@ -83,9 +83,9 @@ function LoginModal(props: any) {
                 {...register('password')}
               />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicCheckbox">
+            {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
               <Form.Check type="checkbox" label="Check me out" />
-            </Form.Group>
+            </Form.Group> */}
             {/* <Button variant="primary" type="submit">
               Submit
             </Button> */}
