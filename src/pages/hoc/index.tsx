@@ -1,3 +1,4 @@
+/* eslint-disable tailwindcss/no-custom-classname */
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { Spinner } from 'react-bootstrap';
@@ -64,7 +65,9 @@ const Index = () => {
       .then((value) => {
         if (value && value[0]?.value) getListUnitByCoursesId(value[0].value);
       })
-      .catch(() => {})
+      .catch(() => {
+        //
+      })
       .finally(() => {
         setDropdownLoading(false);
       });

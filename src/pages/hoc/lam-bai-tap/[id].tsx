@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable tailwindcss/no-custom-classname */
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 
@@ -43,7 +45,7 @@ const Index = () => {
         setListQuestion(question);
       }
     } catch (error) {
-      console.error(error);
+      // console.error(error);
     } finally {
       setLoading(false);
     }
@@ -56,7 +58,7 @@ const Index = () => {
   }, [router.query.id]);
 
   function onSelectQuestion(index: number) {
-    console.log('onselect');
+    // console.log('onselect');
     const newListQuestion = JSON.parse(JSON.stringify(listQuestion))?.map(
       (el: any, i: number) =>
         index !== i ? { ...el, active: false } : { ...el, active: true }
@@ -121,13 +123,13 @@ const Index = () => {
                       {listQuestion[indexQuestion].question.children.length -
                         1 >
                         indexSubQuestion && (
-                        <button
-                          onClick={() => {
-                            setIndexSubQuestion(indexSubQuestion + 1);
-                          }}
-                          className={`${styles['nav-button']} ${styles.back} ${styles.next} `}
-                        />
-                      )}
+                          <button
+                            onClick={() => {
+                              setIndexSubQuestion(indexSubQuestion + 1);
+                            }}
+                            className={`${styles['nav-button']} ${styles.back} ${styles.next} `}
+                          />
+                        )}
                     </span>
                   )}
               </h2>
@@ -150,7 +152,7 @@ const Index = () => {
                       }}
                       currentQuestion={
                         listQuestion[indexQuestion].question.children[
-                          indexSubQuestion
+                        indexSubQuestion
                         ]
                       }
                     ></YesNoQuestion>

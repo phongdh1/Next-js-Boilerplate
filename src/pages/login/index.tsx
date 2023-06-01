@@ -1,7 +1,10 @@
+/* eslint-disable tailwindcss/no-custom-classname */
 import Image from 'next/image';
 import React, { useState } from 'react';
 
+import ForgotPassModal from '@/components/modal/ForgotPassModal';
 import LoginModal from '@/components/modal/login';
+import RegisterModal from '@/components/modal/RegisterModal';
 
 import loginPng from '../../../public/assets/images/v2/btn_login.png';
 import registerPng from '../../../public/assets/images/v2/btn_register.png';
@@ -22,6 +25,9 @@ import styles from './login.module.scss';
 
 const Login = () => {
   const [show, setShow] = useState(false);
+  const [openForgotPass, setOpenForgotPass] = useState(false);
+  const [openRegister, setOpenRegister] = useState(false);
+  const [openTermService, setOpenTermService] = useState(false);
   // const [error, setError] = useState('');
   // const [formValue, setFormValue] = useState({
   //   username: '',
@@ -112,7 +118,11 @@ const Login = () => {
                 alt="Đăng ký"
               />
             </button>
-            <button type="button" className="btn btn-link m-0 p-0">
+            <button
+              type="button"
+              className="btn btn-link m-0 p-0"
+              onClick={() => setOpenRegister(true)}
+            >
               <Image
                 itemType="button"
                 src={registerPng}
@@ -120,7 +130,21 @@ const Login = () => {
                 alt="Đăng ký"
               />
             </button>
-            <LoginModal isShow={show} onCloseLogin={handleClose}></LoginModal>
+            <LoginModal
+              isShow={show}
+              onCloseLogin={handleClose}
+              openForgotPass={setOpenForgotPass}
+            ></LoginModal>
+            <ForgotPassModal
+              isShow={openForgotPass}
+              onClose={setOpenForgotPass}
+            />
+            <RegisterModal
+              isShow={openRegister}
+              onClose={setOpenRegister}
+              openTermService={openTermService}
+              setOpenTermService={setOpenTermService}
+            />
           </div>
         </div>
       </div>

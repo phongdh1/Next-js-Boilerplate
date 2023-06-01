@@ -1,3 +1,6 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable tailwindcss/no-custom-classname */
+/* eslint-disable jsx-a11y/alt-text */
 import Image from 'next/image';
 
 import dung from '../../../../public/assets/images/dung.png';
@@ -5,7 +8,7 @@ import sai from '../../../../public/assets/images/sai.png';
 import styles from './yes-no-question.module.scss';
 
 const YesNoQuestion = ({ currentQuestion, setAnswer }: any) => {
-  console.log(currentQuestion);
+  // console.log(currentQuestion);
   return (
     <div className={styles['yes-no-question-container']}>
       <div className={styles['picture-container']}>
@@ -19,9 +22,8 @@ const YesNoQuestion = ({ currentQuestion, setAnswer }: any) => {
       ))}
       <div className="d-flex justify-content-center mt-5 flex-row">
         <button
-          className={`btn btn-link m-0 p-0 ${
-            (currentQuestion?.studenAnswer === true && styles.active) || ''
-          }`}
+          className={`btn btn-link m-0 p-0 ${(currentQuestion?.studenAnswer === true && styles.active) || ''
+            }`}
           onClick={() => {
             setAnswer(true);
           }}
@@ -34,9 +36,8 @@ const YesNoQuestion = ({ currentQuestion, setAnswer }: any) => {
           />
         </button>
         <button
-          className={`btn btn-link m-0 p-0 ${
-            (currentQuestion?.studenAnswer === false && styles.active) || ''
-          }`}
+          className={`btn btn-link m-0 p-0 ${(currentQuestion?.studenAnswer === false && styles.active) || ''
+            }`}
           onClick={() => {
             setAnswer(false);
           }}

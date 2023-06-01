@@ -1,3 +1,4 @@
+/* eslint-disable tailwindcss/no-custom-classname */
 import styles from './question-selection.module.scss';
 
 const QuestionSelection = ({ onSelectQuestion, listQuestion }: any) => (

@@ -1,3 +1,4 @@
+/* eslint-disable tailwindcss/no-custom-classname */
 import { useRouter } from 'next/router';
 import React from 'react';
 
