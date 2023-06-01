@@ -55,12 +55,12 @@ function LoginModal(props: any) {
   return (
     <div>
       {/* Popup */}
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <Modal
-          show={isShow}
-          onHide={onCloseLogin}
-          className={styles['custom-modal-content']}
-        >
+      <Modal
+        show={isShow}
+        onHide={onCloseLogin}
+        className={styles['custom-modal-content']}
+      >
+        <form onSubmit={handleSubmit(onSubmit)}>
           <Modal.Header closeButton className={styles['custom-modal-header']}>
             <Modal.Title>
               <div className="text-center">Login</div>
@@ -110,8 +110,8 @@ function LoginModal(props: any) {
               Login
             </Button>
           </Modal.Footer>
-        </Modal>
-      </form>
+        </form>
+      </Modal>
     </div>
   );
 }
