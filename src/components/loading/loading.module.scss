@@ -1,0 +1,44 @@
+
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    background: #25295199;
+    .progress {
+	background-color: #5C5C5B;
+	border: 2px solid #FAF3B8;
+	border-radius: 20px;
+	position: relative;
+	margin: 15px 0;
+	height: 15px;
+	width: 80vw;
+    z-index: 2;
+    bottom: 3rem;
+    .progress-done {
+        background: #FFCD64;
+        border: 2px solid #FAF3B8;
+        border-radius: 20px;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        transition: 1s ease 0.3s;
+    }
+}
+.image{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    bottom: 4rem;
+    position: relative;
+}
+
+}

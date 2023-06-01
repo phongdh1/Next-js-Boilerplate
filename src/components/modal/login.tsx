@@ -25,12 +25,14 @@ type TObject = {
 };
 
 function LoginModal(props: any) {
-  const { isShow, onCloseLogin, openForgotPass } = props;
+  const { isShow, onCloseLogin, openForgotPass, setLoading } = props;
   const { register, handleSubmit } = useForm<IFormInputs>();
   const router = useRouter();
 
   async function login(dataObj: IFormInputs) {
     const { username, password } = dataObj;
+    setLoading(true);
+    onCloseLogin(true);
     try {
       const { data: token } = await api.post('users/login', {
         username,
@@ -40,8 +42,10 @@ function LoginModal(props: any) {
         Cookies.set('token', token.accessToken, { expires: 60 });
         const deCodeToken = jwt_decode(token.accessToken) as IToken;
         Cookies.set('username', deCodeToken.user.username, { expires: 60 });
-        onCloseLogin(true);
-        router.push('/dashboard');
+        setTimeout(() => {
+          router.push('/dashboard');
+          setLoading(false);
+        }, 3000);
       }
     } catch (error) {
       throw error;
