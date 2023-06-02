@@ -61,7 +61,7 @@ function LoginModal(props: any) {
         onHide={onCloseLogin}
         className={styles['custom-modal-content']}
       >
-        <Modal.Header closeButton className={styles['custom-modal-header']}>
+        <Modal.Header closeButton>
           <Modal.Title>Đăng Nhập</Modal.Title>
         </Modal.Header>
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -94,7 +94,11 @@ function LoginModal(props: any) {
             <Button variant="secondary" onClick={onCloseLogin}>
               Close
             </Button>
-            <Button variant="primary" type="submit">
+            <Button
+              // variant="primary"
+              className={styles['custom-btn-submit']}
+              type="submit"
+            >
               Submit
             </Button>
           </Modal.Footer>

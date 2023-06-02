@@ -143,19 +143,26 @@ button {
   }
 }
 
-// custom boostrapse modal
+// custom bootstraps modal
 .modal-content {
   background-image: url(../../public/assets/images/v2/modal_content.png);
   background-size: cover;
   background-position: center;
   background-color: transparent;
   border: 0px;
+  width: 57vh;
   .modal-header {
     margin-top: 4vh;
     align-items: baseline;
     border-bottom: 0px;
+    display: flex;
+    flex-direction: column-reverse;
     .modal-title{
-      padding-left: 20vh;;
+      padding: 2vh 0 0 20vh;
+      
+    }
+    .btn-close{
+      background: transparent;
     }
   }
   form {

@@ -1,5 +1,5 @@
 .modal-common {
-    .custom-modal-header {
+    .custom-btn-submit {
         background-color: red !important;
         // background-image: url(../../../public/assets/images/v2/popup_login.png);
     }
@@ -18,8 +18,7 @@
     }
 }
 
-// .test{
-//     .modal-header{
-//         background-color: red !important;
-//     }
-// }
+.custom-btn-submit {
+    // background-color: red !important;
+    background: transparent url(../../../public/assets/images/v2/btn_yellow.png) center/1em auto no-repeat;    
+}
