@@ -10,6 +10,7 @@ import { USER_MENU_LIST } from '@/constants/user-menu.constant';
 import type { SideMenuItem } from '@/models/side-menu-item.model';
 
 import styles from './dashboard.module.scss';
+import Header from './Header';
 
 const MainBoard = () => {
   const listMenu = [
@@ -77,6 +78,7 @@ const Dashboard = () => {
   }, []);
   return (
     <div className={`container-fluid ${styles['dashboard-container']}`}>
+      <Header />
       <div className="row">
         <div className="col-9">
           <MainBoard></MainBoard>
