@@ -25,7 +25,7 @@ const api = Axios.create({
 
 api.interceptors.response.use(
   (res) => {
-    console.log(res);
+    // console.log(res);
     return res;
   },
   (error) => {

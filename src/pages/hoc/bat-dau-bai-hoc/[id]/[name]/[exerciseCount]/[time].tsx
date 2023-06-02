@@ -1,3 +1,4 @@
+/* eslint-disable tailwindcss/no-custom-classname */
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -12,7 +13,7 @@ const Index = () => {
   // initialize
   useEffect(() => {
     if (router.query.id) {
-      console.log(router.query);
+      // console.log(router.query);
       setUnitInfo({ ...router.query });
     }
   }, []);

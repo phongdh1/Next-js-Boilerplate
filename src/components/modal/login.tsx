@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-catch */
 import Cookies from 'js-cookie';
 import jwt_decode from 'jwt-decode';
 import { useRouter } from 'next/router';
@@ -24,18 +25,14 @@ type TObject = {
 };
 
 function LoginModal(props: any) {
-  const { isShow, onCloseLogin } = props;
+  const { isShow, onCloseLogin, openForgotPass, setLoading } = props;
   const { register, handleSubmit } = useForm<IFormInputs>();
   const router = useRouter();
-  const onSubmit = (data: IFormInputs) => {
-    // eslint-disable-next-line @typescript-eslint/no-use-before-define
-    login(data);
-    // reset();
-  };
 
   async function login(dataObj: IFormInputs) {
     const { username, password } = dataObj;
-    // eslint-disable-next-line no-useless-catch
+    setLoading(true);
+    onCloseLogin(true);
     try {
       const { data: token } = await api.post('users/login', {
         username,
@@ -45,13 +42,19 @@ function LoginModal(props: any) {
         Cookies.set('token', token.accessToken, { expires: 60 });
         const deCodeToken = jwt_decode(token.accessToken) as IToken;
         Cookies.set('username', deCodeToken.user.username, { expires: 60 });
-        onCloseLogin(true);
-        router.push('/dashboard');
+        setTimeout(() => {
+          router.push('/dashboard');
+          setLoading(false);
+        }, 3000);
       }
     } catch (error) {
       throw error;
     }
   }
+
+  const onSubmit = (data: IFormInputs) => {
+    login(data);
+  };
 
   return (
     <div>
@@ -59,30 +62,36 @@ function LoginModal(props: any) {
       <Modal
         show={isShow}
         onHide={onCloseLogin}
-        className={styles['custom-modal-content']}
-      >
-        <Modal.Header closeButton>
-          <Modal.Title>Đăng Nhập</Modal.Title>
-        </Modal.Header>
+        className={styles['custom-modal-content']}      
         <form onSubmit={handleSubmit(onSubmit)}>
-          <Modal.Body>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Tên đăng nhập:</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="User name"
-                {...register('username')}
-              />
-            </Form.Group>
+          <Modal.Header closeButton className={styles['custom-modal-header']}>
+            <Modal.Title>
+              <div className="text-center">Login</div>
+            </Modal.Title>
+          </Modal.Header>
 
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Mật khẩu: </Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="Password"
-                {...register('password')}
-              />
-            </Form.Group>
+          <Modal.Body className={styles['custom-modal-body']}>
+            <div className={styles['container-item']}>
+              <Form.Group className={styles.item} controlId="formBasicEmail">
+                <Form.Label className={styles.label}>Username:</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Username"
+                  {...register('username')}
+                />
+              </Form.Group>
+            </div>
+            <div className={styles['container-item']}>
+              <Form.Group className={styles.item} controlId="formBasicPassword">
+                <Form.Label className={styles.label}>Password: </Form.Label>
+                <Form.Control
+                  type="password"                 
+                  placeholder="Password"
+                  {...register('password')}
+                />
+              </Form.Group>
+            </div>
+
             {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
               <Form.Check type="checkbox" label="Check me out" />
             </Form.Group> */}
@@ -90,10 +99,18 @@ function LoginModal(props: any) {
               Submit
             </Button> */}
           </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={onCloseLogin}>
-              Close
+          <Modal.Footer className={styles['custom-modal-footer']}>
+            <Button
+              variant="warning"
+              onClick={() => {
+                onCloseLogin(true);
+                openForgotPass(true);
+              }}
+            >
+              Forgot password
             </Button>
+            <Button variant="primary" type="submit">
+              Login
             <Button
               // variant="primary"
               className={styles['custom-btn-submit']}

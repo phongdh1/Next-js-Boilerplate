@@ -65,8 +65,7 @@ h1 {
   font-size: 80px;
 }
 
-h2 {
-}
+h2 {}
 
 .page-container {
   width: 100vw;
@@ -135,9 +134,11 @@ h2 {
 
 button {
   transition: all 100ms;
+
   &:hover {
     filter: brightness(1.2);
   }
+
   &:active {
     filter: brightness(0.8);
   }
@@ -146,13 +147,14 @@ button {
 // custom bootstraps modal
 .modal-content {
   background-image: url(../../public/assets/images/v2/modal_content.png);
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   background-color: transparent;
+  background-repeat: no-repeat;
   border: 0px;
+  height: 650px;
   width: 57vh;
   .modal-header {
-    margin-top: 4vh;
     align-items: baseline;
     border-bottom: 0px;
     display: flex;
@@ -171,7 +173,8 @@ button {
     padding-left: 4vh;
     min-height: 53vh;
   }
-  .modal-footer{
-    border-top:0px;
+
+  .modal-footer {
+    border-top: 0px;
   }
 }

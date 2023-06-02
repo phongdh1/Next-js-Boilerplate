@@ -1,3 +1,5 @@
+.custom-modal-content {
+    .modal-content {
 .modal-common {
     .custom-btn-submit {
         background-color: red !important;
@@ -5,20 +7,88 @@
     }
     .custom-modal-content {
         background-image: url(../../../public/assets/images/v2/popup_login.png);
-        background-size: cover;
+        background-size: contain;
+        background-repeat: none;
     }
-    .modal-content {
-        background-color: red !important;
+
+    .custom-modal-header {
+        position: relative;
+        margin-top: 6.5rem;
+        display: flex;
+        justify-content: center;
+
+        .modal-title {
+            padding: 0;
+        }
+
+        // background-color: red !important;
+        // background-image: url(../../../public/assets/images/v2/popup_login.png);
+        button {
+            position: absolute;
+            right: 1%;
+            top: -3vh;
+            opacity: 0;
+        }
     }
-    .modal-body {
-        background-color: #f0f0f0;
+
+    .custom-modal-body {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .container-item {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+
+            .item {
+                width: 75%;
+                margin-bottom: 1rem;
+
+                .label {
+                    font-weight: 500;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+        .custom-input {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            div {
+                display: flex;
+                width: 40%;
+                column-gap: 0.5rem;
+
+                input {
+                    width: 25%;
+                    text-align: center;
+                    height: 3.5rem;
+                }
+            }
+
+            ;
+        }
+
+        ul {
+            list-style-image: url('../../../public/assets/images/Star18.png');
+        }
     }
-    .close {
-        color: red;
+
+    .custom-modal-footer {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 4rem;
+
+        button {
+            width: 10rem;
+        }
     }
+
 }
 
-.custom-btn-submit {
-    // background-color: red !important;
-    background: transparent url(../../../public/assets/images/v2/btn_yellow.png) center/1em auto no-repeat;    
-}
+
+

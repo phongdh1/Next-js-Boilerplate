@@ -1,9 +1,11 @@
+/* eslint-disable tailwindcss/no-custom-classname */
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 
 import { SideMenuInfo } from '@/components/side-menu-info/side-menu-info';
+import SlideMenu from '@/components/slide/SlideMenu';
 import { USER_MENU_LIST } from '@/constants/user-menu.constant';
 import type { SideMenuItem } from '@/models/side-menu-item.model';
 
@@ -83,6 +85,7 @@ const Dashboard = () => {
           <SideMenuInfo menuItems={menuItems}></SideMenuInfo>
         </div>
       </div>
+      <SlideMenu data={['slide 1', 'slide 2', 'slide3', 'slide 4']} />
     </div>
   );
 };
