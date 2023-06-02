@@ -1,5 +1,11 @@
 .custom-modal-content {
     .modal-content {
+.modal-common {
+    .custom-btn-submit {
+        background-color: red !important;
+        // background-image: url(../../../public/assets/images/v2/popup_login.png);
+    }
+    .custom-modal-content {
         background-image: url(../../../public/assets/images/v2/popup_login.png);
         background-size: contain;
         background-repeat: none;
@@ -83,3 +89,6 @@
     }
 
 }
+
+
+

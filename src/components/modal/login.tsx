@@ -62,8 +62,7 @@ function LoginModal(props: any) {
       <Modal
         show={isShow}
         onHide={onCloseLogin}
-        className={styles['custom-modal-content']}
-      >
+        className={styles['custom-modal-content']}      
         <form onSubmit={handleSubmit(onSubmit)}>
           <Modal.Header closeButton className={styles['custom-modal-header']}>
             <Modal.Title>
@@ -86,7 +85,7 @@ function LoginModal(props: any) {
               <Form.Group className={styles.item} controlId="formBasicPassword">
                 <Form.Label className={styles.label}>Password: </Form.Label>
                 <Form.Control
-                  type="password"
+                  type="password"                 
                   placeholder="Password"
                   {...register('password')}
                 />
@@ -112,6 +111,12 @@ function LoginModal(props: any) {
             </Button>
             <Button variant="primary" type="submit">
               Login
+            <Button
+              // variant="primary"
+              className={styles['custom-btn-submit']}
+              type="submit"
+            >
+              Submit
             </Button>
           </Modal.Footer>
         </form>

@@ -144,7 +144,7 @@ button {
   }
 }
 
-// custom boostrapse modal
+// custom bootstraps modal
 .modal-content {
   background-image: url(../../public/assets/images/v2/modal_content.png);
   background-size: contain;
@@ -153,10 +153,25 @@ button {
   background-repeat: no-repeat;
   border: 0px;
   height: 650px;
-
+  width: 57vh;
   .modal-header {
     align-items: baseline;
     border-bottom: 0px;
+    display: flex;
+    flex-direction: column-reverse;
+    .modal-title{
+      padding: 2vh 0 0 20vh;
+      
+    }
+    .btn-close{
+      background: transparent;
+    }
+  }
+  form {
+    padding-top: 8vh;
+    width: 48vh;
+    padding-left: 4vh;
+    min-height: 53vh;
   }
 
   .modal-footer {
