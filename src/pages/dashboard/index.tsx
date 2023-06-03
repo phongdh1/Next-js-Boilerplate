@@ -6,8 +6,7 @@ import React, { useEffect, useState } from 'react';
 
 import { SideMenuInfo } from '@/components/side-menu-info/side-menu-info';
 import SlideMenu from '@/components/slide/SlideMenu';
-import { USER_MENU_LIST } from '@/constants/user-menu.constant';
-import type { SideMenuItem } from '@/models/side-menu-item.model';
+import { HEADER_DATA } from '@/constants/user-menu.constant';
 
 import styles from './dashboard.module.scss';
 import Header from './Header';
@@ -71,14 +70,14 @@ const MainBoard = () => {
 
 const Dashboard = () => {
   const router = useRouter();
-  const [menuItems, setMenuItems] = useState<SideMenuItem[] | null>(null);
+  const [menuItems, setMenuItems] = useState<any[] | null>([]);
 
   useEffect(() => {
-    setMenuItems(USER_MENU_LIST({ router }));
+    setMenuItems(HEADER_DATA({ router }));
   }, []);
   return (
     <div className={`container-fluid ${styles['dashboard-container']}`}>
-      <Header />
+      <Header listMenu={menuItems} />
       <div className="row">
         <div className="col-9">
           <MainBoard></MainBoard>
